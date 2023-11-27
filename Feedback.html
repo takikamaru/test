@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!-- Bootstrap reboot (для сброса стилей) -->
+ <link rel="stylesheet" href="libs/bootstrap-reboot.min.css">
+
+ <!-- Bootstrap сетка -->
+ <link rel="stylesheet" href="libs/bootstrap-grid.min.css">
+
+ <!-- Шрифты с Google Fonts -->
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+ <!-- Стили сайта -->
+ <link rel="stylesheet" href="css/styles.css">
+ <link rel="shortcut icon" href="Icon.jpg"/>
+</head>
+<body>
+
+ <nav id="navbar" class="navbar" style="background-image: url('Barotrauma_menu.png')">
+	 <div class="container">
+		 <a href="index.html" class="navbar-brand"><img src="pick/Barotrauma_logo.png" alt="" width="60%" style="padding-top: 2%"></a>
+			<div class="navbar-wrap">
+				<ul class="navbar-menu">
+					 <li><a href="Submarines.html">Submarines</a></li>
+				</ul>
+          <a href="Feedback.html" class="callback">Feedback</a>
+		 </div>
+	 </div>
+ </nav>
+
+ <header class="header" style="background-image: url('Barotrauma_1.png')">
+   <form id="userForm">
+      <h1>Feedback</h1>
+      <label for="userName">Имя</label>
+      <input type="text" id="userName" placeholder="Введите Имя" required autofocus/>
+      <label for="email">Почта</label> <input type="text" id="email" placeholder="Введите эл.почту" required/>
+      <label for="city">Город</label>
+      <input type="text" id="city" placeholder="Ваш город" required/>
+      <button type="submit">Отправить</button>
+</form>
+</div>
+<script>function store() {
+    var userName = document.getElementById("userName").value;
+    var email = document.getElementById("email").value;
+    var key = document.getElementById("city").value;
+    const user = {
+    userName,
+    email,
+    };
+
+    localStorage.setItem(key, JSON.stringify(user));
+    }
+
+    window.onload = function () {
+    document.getElementById("userForm").onsubmit = store;
+
+    }
+</script>
+
+  <script src="index.js"></script>
+ </header>
+
+
+
+</body>
+
+
+</html>
